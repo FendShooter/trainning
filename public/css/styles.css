@@ -60,4 +60,18 @@ body {
   font-size: 1.2rem;
   color: white; }
 
+.cadre {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 50%;
+  top: 50%;
+  border: 1px solid #000;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center; }
+
+.badrequest {
+  color: red; }
+
 /*# sourceMappingURL=styles.css.map */
