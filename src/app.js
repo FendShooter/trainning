@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
+const  {Client}  = require("pg");
 // static folder
 const staticPath = path.join(__dirname, '../public');
 
@@ -18,6 +19,15 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(partialsPath);
 
 
+const client = new Client({
+  user: "postgres",
+  host: "localhost",
+  database: "shop",
+  password: "1983",
+  port: 5432
+});
+client.connect();
+
 
 app.get('/', (req, res) => {
   res.render('index', {
@@ -27,13 +37,23 @@ app.get('/', (req, res) => {
 });
 
 // products
+let gene = Math.floor(Math.random() * 10);
+console.log(gene);
 
-app.get("/products", (req, res) => {
-  res.render("products", {
-    body: "Select our futurist procducts",
-    title: "You will really envoy them..."
-  });
+app.get(`/products`, (req, res) => {
+  const sql = 'select * from tb_view';
+  client.query(sql, (err, resl) => {
+    
+    res.send(resl.rows);
+  })
 });
+
+// app.get("/products", (req, res) => {
+//   res.render("products", {
+//     body: "Select our futurist procducts",
+//     title: "You will really envoy them..."
+//   });
+// });
 
 
 // registration

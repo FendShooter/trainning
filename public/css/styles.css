@@ -74,4 +74,33 @@ body {
 .badrequest {
   color: red; }
 
+.results {
+  margin: 0 auto;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 1rem;
+  border: 1px solid #ebebeb;
+  justify-content: space-between; }
+
+.prod {
+  display: flex; }
+  .prod_name {
+    flex: 1;
+    font-size: 1.8rem;
+    text-transform: uppercase; }
+  .prod_price {
+    flex: 1;
+    font-size: 1.5rem;
+    text-transform: uppercase; }
+  .prod_qty {
+    flex: 1;
+    font-size: 1.5rem;
+    text-transform: uppercase; }
+  .prod_total {
+    flex: 1;
+    font-size: 1.5rem;
+    text-transform: uppercase; }
+
 /*# sourceMappingURL=styles.css.map */
