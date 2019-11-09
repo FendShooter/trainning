@@ -20,11 +20,13 @@ hbs.registerPartials(partialsPath);
 
 
 const client = new Client({
-  user: "postgres",
-  host: "localhost",
-  database: "shop",
-  password: "1983",
-  port: 5432
+  // user: "postgres",
+  // host: "localhost",
+  // database: "shop",
+  // password: "1983",
+  // port: 5432
+  connectionString: process.env.DATABASE_URL,
+  ssl: true
 });
 client.connect();
 
