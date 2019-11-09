@@ -1,7 +1,8 @@
 create table category(
   id serial,
   cat_id varchar(7),
-  cat_name varchar(150)
+  cat_name varchar(150),
+  primary key(cat_id)
 );
 
 
